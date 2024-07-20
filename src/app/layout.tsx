@@ -15,7 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
+      <head>
+        <link rel="icon" href="/pokeball.svg" />
+
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
