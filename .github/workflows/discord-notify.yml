@@ -19,4 +19,5 @@ jobs:
       run: |
         curl -X POST -H "Content-Type: application/json" \
         -d "{\"content\": \"🚀 A pull request has been $PR_ACTION by $PR_USER: **$PR_TITLE**. Check it out here: $PR_URL\"}" \
-        $DISCORD_WEBHOOK_URL
+        "https://discord.com/api/webhooks/1279301635713011755/LtFSs-lHgpFRRH6_QEkQYJSe32frUeShcrznNoS_nldqVSeSpqcJVVI8UKY_zZCInZOy"
+        
