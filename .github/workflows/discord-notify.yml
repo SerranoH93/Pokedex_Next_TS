@@ -1,18 +1,22 @@
-name: Notify Discord on Pull Request Merged
+Python
+name: Notify
 
 on:
   pull_request:
-    types:
-      - closed
+    types: [merged]
 
 jobs:
   notify:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Check if PR was merged
-      if: github.event.pull_request.merged == true
-      run: |
-        curl -X POST -H "Content-Type: application/json" \
-        -d "{\"content\": \"✅ A pull request by ${{ github.event.pull_request.user.login }} has been merged: **${{ github.event.pull_request.title }}**. You can review it here: ${{ github.event.pull_request.html_url }}\"}" \
-        https://discord.com/api/webhooks/1279301635713011755/LtFSs-lHgpFRRH6_QEkQYJSe32frUeShcrznNoS_nldqVSeSpqcJVVI8UKY_zZCInZOy
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Send Discord notification
+        uses: actions/http-get@v3
+        with:
+          url: https://discord.com/api/webhooks/https://discord.com/api/webhooks/1279301635713011755/LtFSs-lHgpFRRH6_QEkQYJSe32frUeShcrznNoS_nldqVSeSpqcJVVI8UKY_zZCInZOy
+          data: '{"content": "**Pull Request Merged!**\nRepository: ${{ github.repository }}\nPR: ${{ github.event.pull_request.html_url }}"}'
+          headers:
+            'Content-Type': application/json
