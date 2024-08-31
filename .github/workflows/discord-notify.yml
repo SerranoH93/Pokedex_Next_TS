@@ -13,4 +13,4 @@ jobs:
       run: |
         curl -X POST -H "Content-Type: application/json" \
         -d "{\"content\": \"🚀 A pull request has been ${{ github.event.action }} by ${{ github.event.pull_request.user.login }}: **${{ github.event.pull_request.title }}**. Check it out here: ${{ github.event.pull_request.html_url }}\"}" \
-        "https://discord.com/api/webhooks/1279299330683047967/DvzpoFqGyOpzMhfogTDnwxLnefBp9sTNKAGEUY6cKROhgt-IFOokso9kuAJvSwFqkHjW"
+        ${{ secrets.DISCORD_WEBHOOK_URL }}
