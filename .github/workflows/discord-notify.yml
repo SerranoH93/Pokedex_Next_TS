@@ -10,7 +10,8 @@ jobs:
 
     steps:
     - name: Send notification to Discord
-      env:        
+      env:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         PR_ACTION: ${{ github.event.action }}
         PR_TITLE: ${{ github.event.pull_request.title }}
         PR_URL: ${{ github.event.pull_request.html_url }}
@@ -18,5 +19,5 @@ jobs:
       run: |
         curl -X POST -H "Content-Type: application/json" \
         -d "{\"content\": \"🚀 A pull request has been $PR_ACTION by $PR_USER: **$PR_TITLE**. Check it out here: $PR_URL\"}" \
-        "https://discord.com/api/webhooks/1279301635713011755/LtFSs-lHgpFRRH6_QEkQYJSe32frUeShcrznNoS_nldqVSeSpqcJVVI8UKY_zZCInZOy"
+        $DISCORD_WEBHOOK_URL
         
