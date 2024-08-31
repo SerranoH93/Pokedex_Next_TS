@@ -7,17 +7,17 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true  # Verifica si el PR fue mergeado
+    if: github.event.pull_request.merged == true
 
     steps:
     - name: Send notification to Discord
       env:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        PR_ACTION: ${{ github.event.action }}
         PR_TITLE: ${{ github.event.pull_request.title }}
         PR_URL: ${{ github.event.pull_request.html_url }}
         PR_USER: ${{ github.event.pull_request.user.login }}
+        PR_BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
       run: |
         curl -X POST -H "Content-Type: application/json" \
-        -d "{\"content\": \"🚀 A pull request has been merged by $PR_USER: **$PR_TITLE**. Check it out here: $PR_URL\"}" \
+        -d "{\"content\": \":rocket: **Actualización en la rama \`$PR_BASE_BRANCH\`** :rocket:\n\nSe realizaron actualizaciones en la rama \`$PR_BASE_BRANCH\`. La rama ha sido actualizada con los cambios de la siguiente PR: [Ver detalles]($PR_URL).\"}" \
         $DISCORD_WEBHOOK_URL
