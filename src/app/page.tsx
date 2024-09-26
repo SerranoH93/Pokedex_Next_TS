@@ -14,7 +14,7 @@ export default function Home() {
             <a href="#">ewinsiov</a><p>fdnog
                 mfsDofv
             </p>
-            <a href="#">ewinsiov</a>               
+            <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste autem, sunt dolor dolores tempore hic architecto nostrum cumque sit nesciunt culpa alias fugiat delectus vel. Cumque quibusdam nihil laboriosam repellendus!</a>               
             <Footer/>
         </main>
     );
