@@ -30,6 +30,12 @@ jobs:
           REPO_NAME: ${{ github.event.repository.full_name }}
         run: |
             MESSAGE=$(jq -n \
-            --arg content ":rocket: **Actualización en el repositorio \`${REPO_NAME}\` en la rama \`${PR_BASE_BRANCH}\`** :rocket:\n\nLa rama ha sido actualizada con los cambios de la siguiente PR: [Ver detalles](${PR_URL})\n\nLos cambios realizados a la rama son los siguientes:\n${PR_BODY}" \
+            --arg content ":rocket: **Actualización en el repositorio \`${REPO_NAME}\` en la rama \`${PR_BASE_BRANCH}\`** :rocket:
+              
+              La rama ha sido actualizada con los cambios de la siguiente PR: [Ver detalles](${PR_URL})
+              
+              Los cambios realizados a la rama son los siguientes:
+                
+              ${PR_BODY}" \
             '{content: $content}')
             curl -X POST -H "Content-Type: application/json" -d "$MESSAGE" $DISCORD_WEBHOOK_URL
