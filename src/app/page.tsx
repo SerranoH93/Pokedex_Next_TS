@@ -5,6 +5,7 @@ export default function Home() {
     return (
         <main className="">
             <Header/>
+            <h1>Home</h1>
             <Footer/>
         </main>
     );
