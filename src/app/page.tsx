@@ -13,9 +13,7 @@ export default function Home() {
             <p>eroignjtrbiomdso</p>
             <a href="#">ewinsiov</a><p>fdnog
                 mfsDofv
-            </p>
-            <p>fdgyrszdfbsfb</p>
-            <p>isdnfviosdnvsiodv</p>           
+            </p>         
             <Footer/>
         </main>
     );
