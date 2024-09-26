@@ -6,6 +6,7 @@ export default function Home() {
         <main className="">
             <Header/>
             <h1>Home</h1>
+            <h2>Esta es una segunda preuba</h2>
             <Footer/>
         </main>
     );
