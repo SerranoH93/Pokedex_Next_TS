@@ -10,6 +10,15 @@ jobs:
     if: github.event.pull_request.merged == true
 
     steps:
+      - name: Print debug information
+        run: |
+          echo "PR Title: ${{ github.event.pull_request.title }}"
+          echo "PR URL: ${{ github.event.pull_request.html_url }}"
+          echo "PR User: ${{ github.event.pull_request.user.login }}"
+          echo "PR Base Branch: ${{ github.event.pull_request.base.ref }}"
+          echo "PR Body: ${{ github.event.pull_request.body }}"
+          echo "Repository: ${{ github.event.repository.full_name }}"
+          
       - name: Send notification to Discord
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
