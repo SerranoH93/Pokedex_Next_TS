@@ -17,6 +17,7 @@ export default function Home() {
             <p>fdgyrszdfbsfb</p>
             <p>isdnfviosdnvsiodv</p>
             <p>isdoniosdncsdiovndfiobndiobndfiobndfio nsodms</p>
+            <p>ivjniosdvidfnv</p>
             <Footer/>
         </main>
     );
