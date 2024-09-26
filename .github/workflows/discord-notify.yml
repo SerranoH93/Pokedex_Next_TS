@@ -34,8 +34,7 @@ jobs:
               
               La rama ha sido actualizada con los cambios de la siguiente PR: [Ver detalles](${PR_URL})
               
-              Los cambios realizados a la rama son los siguientes:
-                
-              ${PR_BODY}" \
+              Los cambios realizados a la rama son los siguientes:                
+              >>>${PR_BODY}" \
             '{content: $content}')
             curl -X POST -H "Content-Type: application/json" -d "$MESSAGE" $DISCORD_WEBHOOK_URL
