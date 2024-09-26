@@ -29,7 +29,6 @@ jobs:
           PR_BODY: ${{ github.event.pull_request.body }}
           REPO_NAME: ${{ github.event.repository.full_name }}
         run: |
-          ESCAPED_PR_BODY=$(echo "${PR_BODY}" | jq -Rr @json)
           curl -X POST -H "Content-Type: application/json" \
-          -d "{\"content\":\":rocket: **Actualización en el repositorio \`${REPO_NAME}\` en la rama \`${PR_BASE_BRANCH}\`** :rocket:\n\nLa rama ha sido actualizada con los cambios de la siguiente PR: [Ver detalles](${PR_URL})\\n\n${ESCAPED_PR_BODY}\"}" \
+          -d "{\"content\":\":rocket: **Actualización en el repositorio \`${REPO_NAME}\` en la rama \`${PR_BASE_BRANCH}\`** :rocket:\n\nLa rama ha sido actualizada con los cambios de la siguiente PR: [Ver detalles](${PR_URL})\\n\n${PR_BODY}\"}" \
           $DISCORD_WEBHOOK_URL
