@@ -11,7 +11,9 @@ export default function Home() {
             <h2>Esta es una segunda preuba</h2>
             <p>dSgifnhtrdiozfnbiodfnviosdnviosd</p>
             <p>eroignjtrbiomdso</p>
-            <a href="#">ewinsiov</a>
+            <a href="#">ewinsiov</a><p>fdnog
+                mfsDofv
+            </p>
             <Footer/>
         </main>
     );
