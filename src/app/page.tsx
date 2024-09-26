@@ -10,6 +10,7 @@ export default function Home() {
             <h1>bdfvnsiodfn</h1>
             <h2>Esta es una segunda preuba</h2>
             <p>dSgifnhtrdiozfnbiodfnviosdnviosd</p>
+            <p>eroignjtrbiomdso</p>
             <Footer/>
         </main>
     );
