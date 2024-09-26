@@ -7,6 +7,7 @@ export default function Home() {
             <Header/>
             <h1>Home</h1>
             <h2>qwqw</h2>
+            <h1>bdfvnsiodfn</h1>
             <h2>Esta es una segunda preuba</h2>
             <Footer/>
         </main>
