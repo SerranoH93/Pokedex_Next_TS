@@ -15,10 +15,7 @@ export default function Home() {
                 mfsDofv
             </p>
             <p>fdgyrszdfbsfb</p>
-            <p>isdnfviosdnvsiodv</p>
-            <p>isdoniosdncsdiovndfiobndiobndfiobndfio nsodms</p>
-            <p>ivjniosdvidfnv</p>
-            <p>ioewhnvifovniodsvnsdio</p>
+            <p>isdnfviosdnvsiodv</p>           
             <Footer/>
         </main>
     );
